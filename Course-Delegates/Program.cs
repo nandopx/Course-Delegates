@@ -3,13 +3,18 @@ using System;
 
 namespace Course_Delegates
 {
+    delegate double BinaryNumericOperation(double n1, double n2);
+
     class Program
     {
         static void Main(string[] args)
         {
             double a = 10;
             double b = 12;
-            double result = CalculationService.Sum(a, b);
+
+            BinaryNumericOperation op = CalculationService.Sum;
+
+            double result = op(a, b);
             Console.WriteLine(result);
         }
     }
